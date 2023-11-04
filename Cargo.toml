@@ -2,6 +2,14 @@
 name = "alpha_stable"
 version = "0.1.0"
 edition = "2021"
+description = "Sample and generate probability distribution functions of Alpha-Stable distributions in Rust."
+homepage = "https://github.com/pb137/alpha-stable/"
+documentation = "https://github.com/pb137/alpha-stable/"
+repository = "https://github.com/pb137/alpha-stable/"
+license-file = "LICENSE"
+readme = "README.md"
+keywords = ["probability", "statistics", "sampling", "alpha stable", "stable distribution", "levy", "heavy tail"]
+categories = ["mathematics", "science"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
