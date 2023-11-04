@@ -8,7 +8,7 @@ documentation = "https://github.com/pb137/alpha-stable/"
 repository = "https://github.com/pb137/alpha-stable/"
 license-file = "LICENSE"
 readme = "README.md"
-keywords = ["probability", "statistics", "sampling", "levy", "heavy tail"]
+keywords = ["probability", "statistics", "sampling", "levy", "stable"]
 categories = ["mathematics", "science"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
