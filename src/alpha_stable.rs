@@ -7,6 +7,7 @@ use spfunc::gamma::gamma;
 use crate::integrator::Integrator;
 use crate::error::Error;
 
+/// Defines an Alpha Stable distribution in Standard or Nolan's form.
 #[derive(Debug)]
 pub struct AlphaStable {
     alpha: f64,
@@ -89,6 +90,16 @@ impl AlphaStable {
     }
 
     /// Sample from the distribution.
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use rand::thread_rng;
+    /// 
+    /// let mut rng = thread_rng();
+    /// let distribution = alpha_stable::AlphaStable::new( 1.5, 0.0, 1.0, 0.0).unwrap();
+    /// let sample = distribution.sample(&mut rng);
+    /// ```
     pub fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> f64 {
 
         if close( self.beta, 0.0, self.tol.beta ) {
@@ -118,7 +129,6 @@ impl AlphaStable {
     }
 
     fn sample_symmetric<R: Rng + ?Sized>(&self, rng: &mut R) -> f64 {
-
         let v = PI * (rng.gen::<f64>() - 0.5);
 
         if close( self.alpha, 1.0, self.tol.alpha ) {
@@ -140,6 +150,13 @@ impl AlphaStable {
     }
 
     /// Value of Probability Distribution function at x.
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// let distribution = alpha_stable::AlphaStable::new( 1.5, 0.0, 1.0, 0.0).unwrap();
+    /// let val = distribution.pdf( 0.5 ).unwrap();
+    /// ```
     pub fn pdf(&self, x: f64) -> Result<f64, Error> {
         let x = (x - self.mu_0) / self.sigma;
         let val = pdf_scaled(x, self.alpha, self.beta, &self.tol, &self.integrator)?;

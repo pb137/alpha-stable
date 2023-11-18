@@ -13,5 +13,5 @@ pub mod integrator;
 mod bisect;
 mod numerical_result;
 
-pub use alpha_stable::{AlphaStable, Tol};
-pub use integrator::Integrator;
+pub use self::alpha_stable::{AlphaStable, Tol};
+pub use self::integrator::Integrator;
