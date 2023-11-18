@@ -1,6 +1,6 @@
 [package]
 name = "alpha_stable"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Sample and generate probability distribution functions of Alpha-Stable distributions in Rust."
 homepage = "https://github.com/pb137/alpha-stable/"
